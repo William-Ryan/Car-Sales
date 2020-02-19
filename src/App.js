@@ -57,7 +57,6 @@ function mapStateToProps(state) {
   }
 }
 
-//This is connecting some stuff.  LEARN MORE ABOUT THIS TOO!!
 export default connect(mapStateToProps, {
   addFeature,
   removeFeature,
