@@ -24,7 +24,7 @@ export const carReducer = (state = initialState, action) => {
                 ...state,
                 car: {
                   ...state.car,
-                  features: [...state.car.features, action.payload]
+                  features: [...state.car.features, action.payload].sort((a, b) => a.id - b.id)
                 },
                 additionalFeatures: state.additionalFeatures.filter(
                   item => item.id !== action.payload.id
@@ -39,7 +39,7 @@ export const carReducer = (state = initialState, action) => {
                     item => item.id !== action.payload.id
                 )
                 },
-                additionalFeatures: [...state.additionalFeatures, action.payload]
+                additionalFeatures: [...state.additionalFeatures, action.payload].sort((a, b) => a.id - b.id)
             };
         case ADD_TOTAL: 
             return{
