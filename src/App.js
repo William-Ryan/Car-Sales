@@ -5,7 +5,7 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
-import { addFeature, removeFeature, addTotal } from './actions/index'
+import { addFeature, removeFeature, addTotal, subtractTotal } from './actions/index'
 
 import { connect } from 'react-redux'
 
@@ -14,7 +14,7 @@ const App = props => {
 
   const removeFeature = item => {
     props.removeFeature(item)
-    props.addTotal(-item.price)
+    props.subtractTotal(item.price)
   };
 
   const buyItem = item => {
@@ -61,5 +61,6 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps, {
   addFeature,
   removeFeature,
-  addTotal
+  addTotal,
+  subtractTotal
 })(App);

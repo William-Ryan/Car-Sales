@@ -1,4 +1,4 @@
-import { ADD_FEATURE, REMOVE_FEATURE, ADD_TOTAL } from '../actions'
+import { ADD_FEATURE, REMOVE_FEATURE, ADD_TOTAL, SUBTRACT_TOTAL } from '../actions'
 
 const initialState = {
     additionalPrice: 0,
@@ -40,6 +40,11 @@ export const carReducer = (state = initialState, action) => {
             return{
                 ...state,
                 additionalPrice: state.additionalPrice + action.payload
+            }
+        case SUBTRACT_TOTAL:
+            return{
+                ...state,
+                additionalPrice: state.additionalPrice - action.payload
             }
         default:
             return state;

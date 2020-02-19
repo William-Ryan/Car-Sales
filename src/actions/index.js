@@ -6,7 +6,6 @@ export const addFeature = (feature) => {
     }
 }
 
-//Action for removing feature
 export const REMOVE_FEATURE = 'REMOVE_FEATURE';
 export const removeFeature = (feature) => {
     return {
@@ -15,11 +14,18 @@ export const removeFeature = (feature) => {
     }
 }
 
-//Action for adding total
 export const ADD_TOTAL = 'ADD_TOTAL'
 export const addTotal = (total) => {
     return {
         type: ADD_TOTAL,
+        payload: total
+    }
+}
+
+export const SUBTRACT_TOTAL = 'SUBTRACT_TOTAL'
+export const subtractTotal = (total) => {
+    return {
+        type: SUBTRACT_TOTAL,
         payload: total
     }
 } 
